@@ -1,5 +1,5 @@
 def mask_given_shapefile(lon,lat,shapefile):
-   ‘’'
+   '''
    Make sure to import these packages:
    import geopandas
    from shapely.ops import unary_union 
@@ -8,7 +8,7 @@ def mask_given_shapefile(lon,lat,shapefile):
    lon - array of grid lons
    lat - array of grid lats
    shapefile - geopandas geodataframe of a shapefile, needs geometry column
-   ‘’'
+   '''
    union=gpd.GeoSeries(unary_union(shapefile.geometry))
    mask=np.ones(lon.shape,dtype=bool)
    mask[:] = False
